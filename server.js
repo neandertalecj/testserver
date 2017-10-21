@@ -1,41 +1,31 @@
-//console.log("hello word");
+// Imports
 const express = require('express');
 const url = require('url');
 
-
-//console.log(express);
+// App object
 const app = express();
-//console.log(app); 
 
-//express.static(root, [options]) ??
-app.use(express.static('public')) //для статичного сервера
+// Static server root folder
+// для статичного сервера
+app.use(express.static('public'))
 
-
+// API endpoints
+// відкрив двері рут. можу в них стукати і реакція колбек
 app.get('/api', (req, res) => {
     const params = url.parse(req.url, true).query;
     console.log(params);
-    //console.log(req.param);
     console.log(req.url);
-//    res.send('hello from server');
-  
     res.send('back');
-}); //відкрив двері рут. можу в них стукати і реакція колбек
-
+});
 
 app.get('/ajax', (req, res) => {
     const rnd = Math.random();
-    res.end(String(rnd));  // end how return. onli string
-    
-             });
+    // end as return. string only
+    res.end(String(rnd));
+});
 
-
+// Starting the server on port 3000
 app.listen(3000, () => {
-    console.log("up.listen on server 3000") // at finish ol file
-} );
-
-
-
-
-
-
-
+    // at the end of a file
+    console.log("app listen on port 3000");
+});
