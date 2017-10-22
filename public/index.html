@@ -4,10 +4,24 @@
     <meta charset="UTF-8">
     <title>Untitled Document</title>
 </head>
+<style>
+    div{
+        height: 40px;
+        width: 100px;
+        background-color: aquamarine;
+    }    
+</style>
 <body>
     <h1>Hello people</h1>
-    <button id="buttom" onclick="ajaxRequest()">Something</button>
+    <button  onclick="ajaxRequest()">GET</button>
     <div id="div"></div>
+    
+    
+    <form onsubmit="formSubmitHendler(event)">
+      <button  >POST</button>
+      <input name="mail" type="email">
+    </form>
+    
     <script src="/client.js"></script>
 </body>
 </html>

@@ -5,3 +5,17 @@ const ajaxRequest = () => {
         document.querySelector('#div').textContent = rnd;
     });
 }
+
+const formSubmitHendler = (e) =>{
+    
+    console.log(e.target.mail.value);
+    const mail = e.target.mail.value;
+    //it for post ajax
+    fetch('/ajax', {
+        method: 'post',
+        body: mail
+    }).then(()=>{
+        e.target.mail.value='';// 
+    })
+}
+
